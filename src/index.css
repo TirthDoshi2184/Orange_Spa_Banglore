@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Royal Emerald & Gold palette, derived from the brand mark's gold ---- */
+  --color-emerald-950: #061A15;
+  --color-emerald-900: #0B3D2E;
+  --color-emerald-800: #124A38;
+  --color-emerald-700: #1A6249;
+  --color-emerald-600: #227A5C;
+  --color-emerald-500: #2C9573;
+
+  --color-gold-700: #7C5A2C;
+  --color-gold-600: #98723D;
+  --color-gold-500: #C9A45C;
+  --color-gold-400: #DABB7C;
+  --color-gold-300: #E8CE93;
+  --color-gold-200: #F2E1BC;
+
+  --color-cream-100: #FBF5E7;
+  --color-cream-50: #FEFBF3;
+
+  --color-ink: #0E241C;
+
+  /* ---- Type ---- */
+  --font-display: "Cinzel", "Noto Sans Kannada", serif;
+  --font-body: "Jost", "Noto Sans Kannada", sans-serif;
+
+  --animate-drift: drift 9s ease-in-out infinite;
+  --animate-wave: wave 14s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-14px); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream-50);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+/* Kannada script needs its own metrics; layer it in as a fallback so line-height
+   doesn't break when both scripts share a line. */
+:lang(kn) {
+  font-family: "Noto Sans Kannada", var(--font-body);
+}
+
+::selection {
+  background-color: var(--color-gold-300);
+  color: var(--color-emerald-900);
+}
+
+/* Visible keyboard focus, kept brand-consistent instead of the browser default */
+:focus-visible {
+  outline: 2px solid var(--color-gold-500);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

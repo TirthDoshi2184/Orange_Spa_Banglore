@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "common": {
+    "call": "Call Now",
+    "whatsapp": "WhatsApp",
+    "bookVia": "Book via WhatsApp",
+    "getDirections": "Get Directions",
+    "viewAll": "View All",
+    "comingSoon": "Coming Soon",
+    "branch": "Bengaluru Branch",
+    "hours": "Hours",
+    "address": "Address",
+    "search": "Search treatments",
+    "allCategories": "All"
+  },
+  "hero": {
+    "kicker": "Orange International Spa — Bengaluru",
+    "headline": "The Art of Stillness, Refined.",
+    "sub": "A quiet emerald retreat in Kammanahalli, where every ritual draws from tradition and finishes with care.",
+    "ctaCall": "Call Now",
+    "ctaWhatsapp": "Message on WhatsApp",
+    "location": "Kammanahalli, Bengaluru"
+  },
+  "about": {
+    "heading": "A Different Kind of Quiet",
+    "body1": "Orange International Spa's Bengaluru home carries the same devotion to craft as our original sanctuary, reimagined for a city that rarely slows down.",
+    "body2": "Here, Ayurvedic ritual meets contemporary therapy inside interiors built for unhurried mornings and long evenings alike. Every treatment is performed with intention — because rest, done properly, is its own art.",
+    "factsHeading": "At a Glance",
+    "factLocation": "Location",
+    "factHours": "Hours",
+    "factLanguages": "Languages Spoken",
+    "languages": "English, Kannada"
+  },
+  "services": {
+    "heading": "Rituals & Treatments",
+    "sub": "Thirty experiences across ten collections — from classic massage to royal VVIP rituals. Call or message us on WhatsApp for any treatment.",
+    "searchPlaceholder": "Search treatments…",
+    "noResults": "No treatments match your search."
+  },
+  "gallery": {
+    "heading": "Inside the Sanctuary",
+    "body": "Our Bengaluru interiors are still being finished. Photographs of the space will be added here soon — until then, come experience it in person.",
+    "badge": "Coming Soon"
+  },
+  "contact": {
+    "heading": "Visit or Reach Us",
+    "addressLabel": "Address",
+    "hoursLabel": "Hours",
+    "callLabel": "Call",
+    "whatsappLabel": "WhatsApp",
+    "directions": "Get Directions"
+  },
+  "footer": {
+    "tagline": "The Art of Stillness, Refined.",
+    "sister": "A sister sanctuary to Orange International Spa, Morbi",
+    "rights": "All rights reserved."
+  }
+}
