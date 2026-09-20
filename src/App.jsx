@@ -5,11 +5,11 @@ import Services from "./components/Services";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import FloatingActions from "./components/FloatingActions";
+import StickyContactBar from "./components/StickyBar";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-cream-50">
+    <div className="min-h-screen bg-cream-50 pb-16">
       <Navbar />
       <main>
         <Hero />
@@ -19,7 +19,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-      <FloatingActions />
+      <StickyContactBar />
     </div>
   );
 }
