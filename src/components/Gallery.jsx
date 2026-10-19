@@ -1,4 +1,56 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
+
+// Paste your Cloudinary URLs here (copy from Media Library → "Copy URL")
+const GALLERY_IMAGES = [
+  "https://res.cloudinary.com/drl7llkoc/image/upload/v1791885653/WhatsApp_Image_2026-10-10_at_6.25.31_PM_tjfqk7.jpg",
+  "https://res.cloudinary.com/drl7llkoc/image/upload/v1791885654/WhatsApp_Image_2026-10-10_at_6.25.35_PM_sknwvw.jpg",
+  "https://res.cloudinary.com/drl7llkoc/image/upload/v1791885659/WhatsApp_Image_2026-10-10_at_6.25.37_PM_eaqesg.jpg",
+  "https://res.cloudinary.com/drl7llkoc/image/upload/v1791885651/WhatsApp_Image_2026-10-10_at_6.25.30_PM_hp4sre.jpg",
+  "https://res.cloudinary.com/drl7llkoc/image/upload/v1791885654/WhatsApp_Image_2026-10-10_at_6.25.34_PM_cyjmnm.jpg",
+  "https://res.cloudinary.com/drl7llkoc/image/upload/v1791885657/WhatsApp_Image_2026-10-10_at_6.25.38_PM_1_zywlcv.jpg"
+];
+
+// Adds auto format/quality + square crop so images load fast and fit the cards
+const optimize = (url) =>
+  url.replace("/upload/", "/upload/f_auto,q_auto,c_fill,ar_1:1,w_800/");
+
+function Placeholder() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      className="h-6 w-6 text-gold-500/40 sm:h-8 sm:w-8"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.3"
+    >
+      <rect x="3" y="4" width="18" height="16" rx="2.5" />
+      <circle cx="9" cy="10" r="1.7" />
+      <path d="M21 16.5 15.5 12 6 20" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function GalleryItem({ src, alt }) {
+  const [failed, setFailed] = useState(false);
+  const showImage = src && !failed;
+
+  return (
+    <div className="flex aspect-square items-center justify-center overflow-hidden rounded-2xl border border-gold-500/20 bg-gold-500/[0.04]">
+      {showImage ? (
+        <img
+          src={optimize(src)}
+          alt={alt}
+          loading="lazy"
+          onError={() => setFailed(true)}
+          className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+        />
+      ) : (
+        <Placeholder />
+      )}
+    </div>
+  );
+}
 
 export default function Gallery() {
   const { t } = useTranslation();
@@ -26,16 +78,11 @@ export default function Gallery() {
 
         <div className="mt-12 grid grid-cols-3 gap-3 sm:gap-4">
           {Array.from({ length: 6 }).map((_, i) => (
-            <div
+            <GalleryItem
               key={i}
-              className="flex aspect-square items-center justify-center rounded-2xl border border-gold-500/20 bg-gold-500/[0.04]"
-            >
-              <svg viewBox="0 0 24 24" className="h-6 w-6 text-gold-500/40 sm:h-8 sm:w-8" fill="none" stroke="currentColor" strokeWidth="1.3">
-                <rect x="3" y="4" width="18" height="16" rx="2.5" />
-                <circle cx="9" cy="10" r="1.7" />
-                <path d="M21 16.5 15.5 12 6 20" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
+              src={GALLERY_IMAGES[i]}
+              alt={`Orange International Spa Bengaluru interior ${i + 1}`}
+            />
           ))}
         </div>
       </div>
